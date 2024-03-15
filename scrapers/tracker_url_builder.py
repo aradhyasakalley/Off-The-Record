@@ -11,6 +11,5 @@ def extract_tracker_link(flipkart_url):
     return tracker_link
 
 
-# product_name = extract_tracker_link(flipkart_url)
-# tracker_link = "https://pricehistoryapp.com/product/" + product_name
-# print(tracker_link)
+tracker_link = extract_tracker_link(flipkart_url)
+print(tracker_link)

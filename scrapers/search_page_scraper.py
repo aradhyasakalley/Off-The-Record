@@ -13,11 +13,13 @@ def search_page_flipkart(query):
     for item in data[:5]:
         rest_link = item.find('a')['href']
         name_element = item.find('div', attrs={'class': '_4rR01T'})
+        image_element = item.find('div', attrs={'class': 'CXW8mj'})  # Add this line to find the image
         if name_element is not None:
             name = name_element.text
             link = start_link + rest_link
-            result_list.append({'name': name, 'link': link})
-    
+            image_url = image_element.find('img')['src'] if image_element else None  # Extract image URL if available
+            result_list.append({'name': name, 'link': link, 'image_url': image_url})  # Include image URL in the result
+            
     return result_list
 
 # # Example usage:
