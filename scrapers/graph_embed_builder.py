@@ -4,6 +4,6 @@ def build_embedded_iframe(tracker_url):
     return iframe_code
 
 # Example usage
-tracker_url = "https://pricehistoryapp.com/product/samsung-galaxy-s22-ultra-5g-phantom-black-256-gb"
-iframe_code = build_embedded_iframe(tracker_url)
-print(iframe_code)
+# tracker_url = "https://pricehistoryapp.com/product/samsung-galaxy-s22-ultra-5g-phantom-black-256-gb"
+# iframe_code = build_embedded_iframe(tracker_url)
+# print(iframe_code)

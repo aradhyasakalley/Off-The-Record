@@ -7,6 +7,7 @@ def build_search_url(query):
     encoded_query = quote(query)
     search_url = base_url + encoded_query
     return search_url
+
 search_query = "samsung salaxy s22 ultra"
 search_url = build_search_url(search_query)
 print(search_url)

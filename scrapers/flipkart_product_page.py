@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 #     'category': []
 # }
 
-def flipkart_scraper(url):
+def flipkart_product_page_scraper(url):
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,/;q=0.8',
@@ -71,7 +71,3 @@ def flipkart_scraper(url):
     data['category'] = category
     return data
 
-# sample usage
-url = "https://www.flipkart.com/samsung-galaxy-s22-ultra-5g-phantom-black-256-gb/p/itm7ca5bd1817da5?pid=MOBGGG2YA4MHBBZZ&lid=LSTMOBGGG2YA4MHBBZZM13247&marketplace=FLIPKART&q=samsung+salaxy+s22+ultra&store=tyy%2F4io&srno=s_1_1&otracker=search&fm=organic&iid=fc77eb28-163b-45d7-852f-3d9e7078033d.MOBGGG2YA4MHBBZZ.SEARCH&ppt=None&ppn=None&ssid=zg1wh4w0m80000001710259792634&qH=c6e1a112140f4071"
-product_data = flipkart_scraper(url)
-print(product_data)

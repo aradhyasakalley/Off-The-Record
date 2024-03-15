@@ -46,9 +46,9 @@ def extract_buying_info(url):
         return None
 
 # Example usage
-url = "https://pricehistoryapp.com/product/samsung-galaxy-s22-ultra-5g-phantom-black-256-gb"
-result = extract_buying_info(url)
-if result:
-    print(result)
-else:
-    print("Div with class 'flex flex-row h-10 pt-2' or price div not found.")
+# url = "https://pricehistoryapp.com/product/samsung-galaxy-s22-ultra-5g-phantom-black-256-gb"
+# result = extract_buying_info(url)
+# if result:
+#     print(result)
+# else:
+#     print("Div with class 'flex flex-row h-10 pt-2' or price div not found.")
