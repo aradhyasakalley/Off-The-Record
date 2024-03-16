@@ -1,17 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-
-# this function takes in the url for the product page as input and return as dictionary of format 
-# {
-#     'title': '', 
-#     'image': '', 
-#     'reviews': '', 
-#     'price': '', 
-#     'disc_perc': '', 
-#     'highlights': [], 
-#     'offers': [], 
-#     'category': []
-# }
+import json
 
 def flipkart_product_page_scraper(url):
     headers = {
@@ -38,11 +27,7 @@ def flipkart_product_page_scraper(url):
     split = value.split("&")
     ratings = split[0].split()[0]
     reviews = split[1].split()[0]
-    # data['ratings'] = ratings
     data['reviews'] = reviews
-
-    stars = soup.find('div', class_="_3LWZlK").text
-    # data['stars'] = stars
 
     price = soup.find('div', class_="_30jeq3 _16Jk6d").text
     data['price'] = price
@@ -69,5 +54,11 @@ def flipkart_product_page_scraper(url):
         
     category = j[:3]
     data['category'] = category
-    return data
+    
+    # Convert dictionary to JSON and return
+    return json.dumps(data, indent=4)
 
+# Example usage:
+url = "https://www.flipkart.com/apple-iphone-15-black-128-gb/p/itm6ac6485515ae4"
+result = flipkart_product_page_scraper(url)
+print(result)

@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-
+import json
 
 def extract_buying_info(url):
     tracker_url = extract_tracker_link(url)
@@ -67,6 +67,7 @@ flipkart_url = 'https://www.flipkart.com/oppo-f25-pro-5g-lava-red-128-gb/p/itm94
 
 result = extract_buying_info(flipkart_url)
 if result:
-    print(result)
+    # Convert result to JSON and print
+    print(json.dumps(result, indent=4))
 else:
     print("Div with class 'flex flex-row h-10 pt-2' or price div not found.")

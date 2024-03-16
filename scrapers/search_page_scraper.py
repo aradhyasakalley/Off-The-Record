@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import json
 
 def search_page_flipkart(query):
     search_url = f'https://www.flipkart.com/search?q={query}'
@@ -19,10 +20,11 @@ def search_page_flipkart(query):
             link = start_link + rest_link
             image_url = image_element.find('img')['src'] if image_element else None  # Extract image URL if available
             result_list.append({'name': name, 'link': link, 'image_url': image_url})  # Include image URL in the result
-            
-    return result_list
+    
+    # Convert list of dictionaries to JSON and return
+    return json.dumps(result_list, indent=4)
 
-# # Example usage:
-# search_query = 'samsung galaxy s22 ultra'
-# results = search_page_flipkart(search_query)
-# print(results)
+# Example usage:
+search_query = 'samsung galaxy s22 ultra'
+results = search_page_flipkart(search_query)
+print(results)
