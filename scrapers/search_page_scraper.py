@@ -10,15 +10,18 @@ def search_page_flipkart(query):
     content = BeautifulSoup(response.content, "html.parser")
     data = content.find_all('div', {'class': '_2kHMtA'})
     
-    for item in data[:5]:
+    for item in data[:12]:
         rest_link = item.find('a')['href']
         name_element = item.find('div', attrs={'class': '_4rR01T'})
-        image_element = item.find('div', attrs={'class': 'CXW8mj'})  # Add this line to find the image
-        if name_element is not None:
+        price_element = item.find('div', attrs={'class': '_30jeq3 _1_WHN1'})  # Add this line to find the price
+        image_element = item.find('div', attrs={'class': 'CXW8mj'})
+        
+        if name_element is not None and price_element is not None:  # Check if both name and price elements are found
             name = name_element.text
+            price = price_element.text  # Extracting the price text
             link = start_link + rest_link
-            image_url = image_element.find('img')['src'] if image_element else None  # Extract image URL if available
-            result_list.append({'name': name, 'link': link, 'image_url': image_url})  # Include image URL in the result
+            image_url = image_element.find('img')['src'] if image_element else None
+            result_list.append({'name': name, 'price': price, 'link': link, 'image_url': image_url})
             
     return result_list
 

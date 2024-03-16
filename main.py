@@ -1,6 +1,6 @@
 from fastapi import FastAPI,HTTPException
 from typing import List,Dict,Optional
-
+from fastapi.middleware.cors import CORSMiddleware
 from scrapers.search_page_scraper import search_page_flipkart
 from scrapers.flipkart_product_page import flipkart_product_page_scraper
 from scrapers.tracker_page_scraper import extract_buying_info
@@ -9,6 +9,13 @@ from scrapers.tracker_url_builder import extract_tracker_link
 
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 async def hello():

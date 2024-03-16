@@ -1,67 +1,139 @@
 body {
-    background-color: #222;
-  }
+  background-color: #f5ede2;
+}
+
 .App {
-    text-align: center;
-    margin-top: 30px;
-    background-color: #222;
-    color: white;
-  }
-  
-  .search-container {
-    margin-bottom: 20px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  input[type="text"] {
-    padding: 10px;
-    width: 50%;
-    margin-right: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: white;
-  }
-  
-  button {
-    padding: 10px 20px;
-    cursor: pointer;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  .results-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .product-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-    width: 250px;
-    background-color: black;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .product-card h2 {
-    margin-bottom: 10px;
-  }
-  
-  .product-card p {
-    margin: 5px 0;
-  }
-  
+  text-align: center;
+  margin-top: 60px;
+  background-color: #f5ede2;
+  color: white;
+}
+
+.App-header {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo-image {
+  width: 200px; /* Adjust the width as needed */
+  height: auto;
+  height: 10; /* Maintain aspect ratio */
+}
+
+.search-container {
+  margin-top: -30px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input[type="text"] {
+  padding: 10px;
+  height: 20px; /* Adjust the height */
+  width: 70%; /* Make it longer */
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 5px solid black; /* Add border with black color */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: black;
+  font-family: monospace; /* Change the font family */
+  font-size: 14px; /* Adjust the font size */
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: monospace; /* Change the font family */
+  font-size: 14px; /* Adjust the font size */
+}
+
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product-card {
+  border: 5px solid black;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  background-color: #f5ede2;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: black;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.product-image {
+  width: 100%; /* Adjust the width of the image */
+  height: 20; /* Ensure proper aspect ratio */
+  border-radius: 20px; /* Add border-radius to the image */
+}
+
+.product-card h2 {
+  margin-bottom: 10px;
+  color: black; /* Change text color to black */
+  font-weight: bold; 
+  font-family: monospace/* Make the text bold */
+}
+
+.product-card p {
+  margin: 5px 0;
+  color: black;
+  font-family: monospace;
+  font-size: 15px;/* Change text color to black */
+}
+
+.product-card-buttons {
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+}
+
+/* Move the View and Go to Flipkart buttons to opposite ends */
+.product-card .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Add some margin to separate from other content */
+}
+
+/* Style the buttons */
+.product-card .buttons button,
+.product-card .buttons a {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .buttons .analyze-btn {
+  background-color: blue;
+  color: white;
+}
+
+.product-card .buttons .buy-btn {
+  background-color: #28a745; /* Green color */
+  color: white;
+}
