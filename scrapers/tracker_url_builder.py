@@ -11,5 +11,5 @@ def extract_tracker_link(flipkart_url):
     return tracker_link
 
 
-tracker_link = extract_tracker_link(flipkart_url)
-print(tracker_link)
+# tracker_link = extract_tracker_link(flipkart_url)
+# print(tracker_link)

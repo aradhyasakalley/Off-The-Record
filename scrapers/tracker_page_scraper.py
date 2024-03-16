@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import re
-import json
+
 
 def extract_buying_info(url):
     tracker_url = extract_tracker_link(url)
@@ -9,6 +9,10 @@ def extract_buying_info(url):
         return None
     
     response = requests.get(tracker_url)
+    if response.status_code != 200:
+        print("Failed to fetch tracker URL:", tracker_url)
+        return None
+    
     html_content = response.content
     soup = BeautifulSoup(html_content, "html.parser")
 
@@ -17,14 +21,14 @@ def extract_buying_info(url):
 
     if target_div and minmax_price_div:
         # Find all child div elements representing rating options
-        rating_divs = target_div.find_all("div")
+        rating_divs = target_div.find_all("div", recursive=False)
         rating_option = None
         buying_info = None
         for div in rating_divs:
             marker_span = div.find("span", class_="absolute -bottom-4 w-full h-4 flex justify-center")
             if marker_span:
                 rating_option = div.find("p").text.strip()
-                buying_info_element = soup.find("p", class_="text-gray-500 dark:text-gray-400 text-sm")
+                buying_info_element = div.find_next_sibling("p", class_="text-gray-500 dark:text-gray-400 text-sm")
                 if buying_info_element:
                     buying_info = buying_info_element.get_text(strip=True)
                 break  
@@ -67,7 +71,6 @@ flipkart_url = 'https://www.flipkart.com/oppo-f25-pro-5g-lava-red-128-gb/p/itm94
 
 result = extract_buying_info(flipkart_url)
 if result:
-    # Convert result to JSON and print
-    print(json.dumps(result, indent=4))
+    print(result)
 else:
     print("Div with class 'flex flex-row h-10 pt-2' or price div not found.")
