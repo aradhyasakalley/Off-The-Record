@@ -1,0 +1,84 @@
+.product-details-container {
+    margin-top: 30px;
+  }
+  
+  .product-details {
+    justify-content: space-evenly;
+    display: flex;
+  }
+  
+  .product-page-image {
+    padding: 10px;
+    margin-right: 10px;
+    margin-left: 40px;
+    border-radius: 25px;
+    height: 60%;
+    border: 5px solid #000; 
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid black; /* Add border with black color */
+    border-radius: 35px;
+  }
+  
+  .product-info {
+    margin-right: 100px;
+    min-width: 800px;
+    max-width: 5000px; 
+    flex: 1;
+  }
+  
+  .product-info h3 {
+    font-family: monospace; /* Change the font family */
+    font-size: 34px; /* Adjust the font size for the title */
+    font-weight: bold;
+    margin-top: -5px;
+  }
+  
+  .product-info p {
+    font-family: monospace; 
+    font-size: 14px; 
+    font-weight: bold;
+    color: purple;
+  }
+  
+  .product-info ul {
+    font-family: monospace; 
+    font-size: 14px; 
+  }
+  
+  .product-info h4 {
+    font-family: monospace; 
+    font-size: 24px; 
+  }
+  
+  .product-info h5 {
+    font-family: Arial, sans-serif; /* Change the font family for nested headings */
+    font-size: 14px; /* Adjust the font size for nested headings */
+  }
+  .product-header {
+    padding: 15px;
+    border: 5px solid #000; 
+    border-radius: 25px;
+  }
+  .button-container {
+    display: flex;
+    margin-left: 30px;
+    margin-right: 1000px;
+    margin-top: 10px;
+  }
+  
+  .buy-button,
+  .analyze-button {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+    margin: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  

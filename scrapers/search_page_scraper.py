@@ -10,7 +10,7 @@ def search_page_flipkart(query):
     content = BeautifulSoup(response.content, "html.parser")
     data = content.find_all('div', {'class': '_2kHMtA'})
     
-    for item in data[:12]:
+    for index, item in enumerate(data[:12]):
         rest_link = item.find('a')['href']
         name_element = item.find('div', attrs={'class': '_4rR01T'})
         price_element = item.find('div', attrs={'class': '_30jeq3 _1_WHN1'})  # Add this line to find the price
@@ -21,10 +21,9 @@ def search_page_flipkart(query):
             price = price_element.text  # Extracting the price text
             link = start_link + rest_link
             image_url = image_element.find('img')['src'] if image_element else None
-            result_list.append({'name': name, 'price': price, 'link': link, 'image_url': image_url})
+            result_list.append({'id': index, 'name': name, 'price': price, 'link': link, 'image_url': image_url})
             
     return result_list
-
 # # Example usage:
 # search_query = 'samsung galaxy s22 ultra'
 # results = search_page_flipkart(search_query)

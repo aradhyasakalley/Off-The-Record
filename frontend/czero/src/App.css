@@ -1,11 +1,11 @@
 body {
-  background-color: #f5ede2;
+  background-color: #e3e4f9;
 }
 
 .App {
   text-align: center;
-  margin-top: 60px;
-  background-color: #f5ede2;
+  margin-top: -40px;
+  background-color: #e3e4f9;
   color: white;
 }
 
@@ -29,11 +29,10 @@ body {
 }
 
 .logo-image {
-  width: 200px; /* Adjust the width as needed */
+  width: 200px; 
   height: auto;
-  height: 10; /* Maintain aspect ratio */
+  height: 10; 
 }
-
 .search-container {
   margin-top: -30px;
   margin-bottom: 20px;
@@ -49,11 +48,12 @@ input[type="text"] {
   margin-right: 10px;
   background-color: rgba(255, 255, 255, 0.1);
   border: 5px solid black; /* Add border with black color */
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgb(0, 0, 0);
   color: black;
   font-family: monospace; /* Change the font family */
   font-size: 14px; /* Adjust the font size */
+  font-weight: bold;
 }
 
 button {
@@ -62,10 +62,12 @@ button {
   background-color: #222;
   color: white;
   border: none;
-  border-radius: 5px;
+  height: 50px;
+  border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: monospace; /* Change the font family */
   font-size: 14px; /* Adjust the font size */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
 }
 
 .results-container {
@@ -80,30 +82,33 @@ button {
   padding: 10px;
   margin: 10px;
   width: 200px;
-  background-color: #f5ede2;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #e3e4f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.984);
   color: black;
-  overflow: hidden; /* Prevent overflow */
+  overflow: hidden;
 }
 
 .product-image {
-  width: 100%; /* Adjust the width of the image */
-  height: 20; /* Ensure proper aspect ratio */
-  border-radius: 20px; /* Add border-radius to the image */
+align-self: center;  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block; /* Ensures proper centering */
+  /* Centers the image horizontally */
 }
+
 
 .product-card h2 {
   margin-bottom: 10px;
   color: black; /* Change text color to black */
-  font-weight: bold; 
-  font-family: monospace/* Make the text bold */
+  font-weight: bold;
+  font-family: monospace /* Make the text bold */;
 }
 
 .product-card p {
   margin: 5px 0;
   color: black;
   font-family: monospace;
-  font-size: 15px;/* Change text color to black */
+  font-size: 15px; /* Change text color to black */
 }
 
 .product-card-buttons {

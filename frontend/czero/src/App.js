@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
-// import ProductCard from './ProductCard';
-import Image from  '../src/assets/logo.jpeg';
+import { useNavigate } from "react-router-dom";
+import Image from  '../src/assets/logo-shriya.jpeg';
 
-function App() {
+const App = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
   const [error, setError] = useState(null);
-
+  const navigate = useNavigate();
   const handleSearch = () => {
     fetch(`http://localhost:8000/search/?query=${query}`)
       .then(response => {
@@ -27,16 +27,16 @@ function App() {
       });
   };
 
-  const handleAnalyze = () => {
-    // Handle the analysis action
+  const handleView = (page_link) => {    
+    navigate('/Product');
   };
+  
 
   return (
     <div className="App">
       <header className="App-header">
         <div className="header-content">
           <div className="logo-container">
-            {/* <h1>Off The Record</h1> */}
             <img src={Image} alt="Logo" className="logo-image" />
           </div>
         </div>
@@ -52,7 +52,7 @@ function App() {
             <img className="product-image" src={product.image_url} alt={product.name} />
             <p>{product.name}</p>
             <p>{product.price}</p>
-            <button onClick={handleAnalyze}>View</button>
+            <button onClick={() => handleView(product.link)}>View</button>
           </div>
         ))}
       </div>
