@@ -57,7 +57,7 @@ const Modal = ({ data, onClose }) => {
               <button style={{ height:35,margin: '5px', fontFamily: 'monospace', fontWeight: 'bold' }}>Average Price: {data.prices.average}</button>
               <button style={{ height:35,margin: '5px', fontFamily: 'monospace', fontWeight: 'bold' }}>Max Price: {data.prices.max}</button>
             </div>
-            <div style={{ width: '100%', height: '700px', overflow: 'hidden', marginTop: '20px' }}>
+            <div style={{ width: '100%', height: '700px', overflow: 'hidden', marginTop: '20px',borderRadius:20 }}>
               <div dangerouslySetInnerHTML={{ __html: data.embedded_iframe }} />
             </div>
           </div>

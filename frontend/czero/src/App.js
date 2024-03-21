@@ -27,9 +27,9 @@ const App = () => {
       });
   };
 
-  const handleView = (page_link) => {    
-    navigate('/Product');
-  };
+  const handleView = (id, link) => {
+    navigate(`/Product/${id}`, { state: { link } });
+  }
   
 
   return (
@@ -52,7 +52,7 @@ const App = () => {
             <img className="product-image" src={product.image_url} alt={product.name} />
             <p>{product.name}</p>
             <p>{product.price}</p>
-            <button onClick={() => handleView(product.link)}>View</button>
+            <button onClick={() => handleView(product.id,product.link)}>View</button>
           </div>
         ))}
       </div>
@@ -62,3 +62,5 @@ const App = () => {
 }
 
 export default App;
+
+
