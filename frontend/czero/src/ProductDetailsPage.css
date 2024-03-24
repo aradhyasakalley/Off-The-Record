@@ -13,13 +13,17 @@
     margin-right: 10px;
     margin-left: 40px;
     border-radius: 25px;
-    height: 60%;
+    height: 80%;
     border: 5px solid #000; 
+    width: 900px;
+    align-items: center;
+
   }
   
   .product-image img {
+    align-items: center;
     max-width: 100%;
-    height: auto;
+    height: 90%;
     border: 5px solid black; /* Add border with black color */
     border-radius: 35px;
   }
@@ -42,7 +46,7 @@
     font-family: monospace; 
     font-size: 14px; 
     font-weight: bold;
-    color: purple;
+    color: black;
   }
   
   .product-info ul {

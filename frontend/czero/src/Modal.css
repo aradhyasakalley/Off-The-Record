@@ -9,7 +9,7 @@
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    background-color: transparent; /* Black w/ opacity */
     display: flex;
     justify-content: center;
     align-items: center;
