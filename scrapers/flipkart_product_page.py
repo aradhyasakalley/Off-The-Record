@@ -23,6 +23,14 @@ def flipkart_product_page_scraper(url):
     image_src = img_tag['src'] if img_tag else None
     data['image'] = image_src
 
+    secondary_images = []
+    secondary_img_divs = soup.find_all('div', class_='_2FHWw4')
+    for div in secondary_img_divs:
+        img_tags = div.find_all('img', class_='q6DClP')
+        secondary_images.extend([img['src'] for img in img_tags])
+
+    data['secondary_images'] = secondary_images
+
     reviews_div = soup.find('span', class_="_2_R_DZ")
     reviews = reviews_div.text.strip() if reviews_div else None
     data['reviews'] = reviews
@@ -34,7 +42,7 @@ def flipkart_product_page_scraper(url):
     price = price_div.text.strip() if price_div else None
     data['price'] = price
     
-    disc_perc_div = soup.find('div', class_ = '_3Ay6Sb _31Dcoz')
+    disc_perc_div = soup.find('div', class_='_3Ay6Sb _31Dcoz')
     disc_perc = disc_perc_div.text.strip() if disc_perc_div else None
     data['disc_perc'] = disc_perc
 
@@ -59,3 +67,4 @@ def flipkart_product_page_scraper(url):
     data['highlights'] = highlights_list
 
     return data
+

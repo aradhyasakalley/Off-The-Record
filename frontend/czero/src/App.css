@@ -159,10 +159,14 @@ align-self: center;  width: 100%;
 .product-card p {
   margin: 5px 0;
   color: black;
+  font-weight: bold;
   font-family: monospace;
   font-size: 15px; /* Change text color to black */
 }
-
+.no-results-image{
+  width: 900px;
+  margin-top: 50px;
+}
 .product-card-buttons {
   display: flex;
   justify-content: space-between; /* Distribute items evenly */
@@ -193,4 +197,13 @@ align-self: center;  width: 100%;
 .product-card .buttons .buy-btn {
   background-color: #28a745; /* Green color */
   color: white;
+}
+
+
+@font-face {
+  font-family:ultra;
+  src: url('../src/assets/Ultra-Regular.ttf');
+}
+.ultra{
+  font-family: ultra;
 }

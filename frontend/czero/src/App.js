@@ -2,16 +2,17 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { useNavigate } from "react-router-dom";
 import Image from '../src/assets/logoShriya.png';
+import NoResultsImage from '../src/assets/money.jpg'; // Import the image for no results
 
 const App = () => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
-  const [loading, setLoading] = useState(false); // New state for loading
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    setLoading(true); // Set loading to true when search starts
+    setLoading(true);
     fetch(`http://localhost:8000/search/?query=${query}`)
       .then(response => {
         if (!response.ok) {
@@ -29,7 +30,7 @@ const App = () => {
         setResults([]);
       })
       .finally(() => {
-        setLoading(false); // Set loading to false when search completes (either success or failure)
+        setLoading(false);
       });
   };
 
@@ -38,7 +39,6 @@ const App = () => {
   };
 
   useEffect(() => {
-    // Scroll to the results container when results are updated
     const resultsContainer = document.getElementById('results-container');
     if (resultsContainer) {
       resultsContainer.scrollIntoView({ behavior: 'smooth' });
@@ -59,8 +59,14 @@ const App = () => {
         <button onClick={handleSearch}>Search</button>
       </div>
 
+      {results.length === 0 && ( // Conditionally render the image when there are no results
+        <div className="no-results-container">
+          <img src={NoResultsImage} alt="No results" className="no-results-image" />
+        </div>
+      )}
+
       <div className="results-container" id="results-container">
-        {loading && <div className="loading">Loading...</div>} {/* Display loading animation if loading is true */}
+        {loading && <div className="loading">Loading...</div>}
         {results.map(product => (
           <div className="product-card" key={product.link}>
             <img className="product-image" src={product.image_url} alt={product.name} />
