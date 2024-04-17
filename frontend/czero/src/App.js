@@ -14,10 +14,12 @@ const App = () => {
   const handleSearch = () => {
     setLoading(true);
     fetch(`http://localhost:8000/search/?query=${query}`)
+    // fetch(`https://off-the-record.onrender.com/search/?query=${query}`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to fetch products');
         }
+        console.log('hello');
         return response.json();
       })
       .then(data => {
