@@ -6,9 +6,10 @@ from scrapers.flipkart_product_page import flipkart_product_page_scraper
 from scrapers.tracker_page_scraper import extract_buying_info
 from scrapers.graph_embed_builder import build_embedded_iframe
 from scrapers.tracker_url_builder import extract_tracker_link
-
+from mangum import Mangum
 
 app = FastAPI()
+handler = Mangum(app)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

@@ -61,11 +61,7 @@ const App = () => {
         <button onClick={handleSearch}>Search</button>
       </div>
 
-      {results.length === 0 && ( // Conditionally render the image when there are no results
-        <div className="no-results-container">
-          <img src={NoResultsImage} alt="No results" className="no-results-image" />
-        </div>
-      )}
+      
 
       <div className="results-container" id="results-container">
         {loading && <div className="loading">Loading...</div>}
